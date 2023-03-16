@@ -1,0 +1,31 @@
+### get all cars
+GET http://localhost:3000/cars
+
+### get car by id
+GET http://localhost:3000/cars/1
+
+### get car by id but with error
+GET http://localhost:3000/cars/1s
+
+### post data to create new car
+POST http://localhost:3000/cars HTTP/1.1
+content-type: application/json
+
+{
+    "name": "BMW",
+    "model": "X5",
+    "year": 2019
+}
+
+### edit car by id
+PATCH  http://localhost:3000/cars/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "BMW",
+    "model": "X5",
+    "year": 2019
+}
+
+### delete car by id
+DELETE http://localhost:3000/cars/1

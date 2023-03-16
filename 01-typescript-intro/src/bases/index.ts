@@ -1,0 +1,6 @@
+export { age, isSingle, lastname, name } from './01-types'
+export { pokemonIds } from './02-objects'
+export {  } from './03-classes'
+export {  } from './04-injection'
+export {  } from './05-decorator'
+export {  } from './06-decorators'

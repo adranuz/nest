@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+      .red {
+        color: red;
+      }
+
+      button:focus {
+        background-color: aquamarine;
+      }
+
+      .btn {
+        background-color: teal;
+        color: white;
+      }
+
+      #cube {
+        width: 100px;
+        height: 100px;
+        background-color: teal;
+        display: none;
+        /* position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: all 1s; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Curso de jquery</h1>
+    <p>Hola, este es un parrafo para nuestra pagina.</p>
+    <p id="secundary">Este es un segundo parrafo.</p>
+    <h2 class="subtitle">Este es un segundo titulo.</h2>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+          role="tab" aria-controls="home-tab-pane" aria-selected="true">Selectors</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+          role="tab" aria-controls="profile-tab-pane" aria-selected="false">Events</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button"
+          role="tab" aria-controls="contact-tab-pane" aria-selected="false">Animations</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane"
+          type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">HTML Nodes</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ajax-tab" data-bs-toggle="tab" data-bs-target="#ajax-tab-pane" type="button"
+          role="tab" aria-controls="ajax-tab-pane" aria-selected="false">AJAX</button>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+        <div class="selector">
+          <h2>Selectores</h2>
+          <ul class="list">
+            <li class="item item1">item 1</li>
+            <li class="item item2">item 2</li>
+            <li class="item item3">item 3</li>
+            <li class="item item4">item 4</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+        <div class="events">
+          <h2>Eventos</h2>
+          <ul class="list">
+            <li class="item"><button class="item1">click</button></li>
+            <li class="item"><button class="item2">hide title</button></li>
+            <li class="item"><button class="item3">show title</button></li>
+            <li class="item"><button class="item4">click & doble click</button></li>
+            <li class="item"><button class="item5">mouse enter</button></li>
+            <li class="item"><button class="item6">mouse leave</button></li>
+            <li class="item"><button class="item7">mouse hover</button></li>
+
+            <li class="item"><button class="item8">tab or input focus</button></li>
+            <li class="item"><button class="item9">tab or input blur</button></li>
+
+            <li class="item"><button class="item10">- on -</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+        <div class="animations">
+          <h2>Animaciones</h2>
+          <ul class="list">
+            <li class="item"><button class="item1">fadeIn</button></li>
+            <li class="item"><button class="item2">fadeOut</button></li>
+            <li class="item"><button class="item3">fadeToggle</button></li>
+            <li class="item"><button class="item4">fadeTo</button></li>
+
+            <li class="item"><button class="item5">slideUp</button></li>
+            <li class="item"><button class="item6">slideDown</button></li>
+            <li class="item"><button class="item7">slideToggle</button></li>
+
+            <li class="item"><button class="item8">animate to 250px</button></li>
+            <li class="item"><button class="item9">animate add 50px</button></li>
+            <li class="item"><button class="item10">animate to start</button></li>
+            <li class="item"><button class="item11">animation stop</button></li>
+          </ul>
+        </div>
+        <div id="cube">cube</div>
+      </div>
+      <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+        <div class="html">
+          <h2>HTML</h2>
+          <button value="valuebtn" class="btn" id="btn"><b>clickeame</b></button>
+          <input id="input1" type="text" placeholder="write here">
+          <ul class="list">
+            <li class="item"><button class="item1">get from button node</button></li>
+            <li class="item"><button class="item2">set as text</button></li>
+            <li class="item"><button class="item3">set as html</button></li>
+            <li class="item"><button class="item4">set as class</button></li>
+
+            <li class="item"><button class="item5">set prepend</button></li>
+            <li class="item"><button class="item6">set append</button></li>
+
+            <li class="item"><button class="item7">insert before</button></li>
+            <li class="item"><button class="item8">insert after</button></li>
+
+            <li class="item"><button class="item9">delete nodes p</button></li>
+
+            <li class="item"><button class="item10">animate to start</button></li>
+            <li class="item"><button class="item11">animation stop</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ajax-tab-pane" role="tabpanel" aria-labelledby="ajax-tab" tabindex="0">
+        <div class="ajax">
+          <h2>AJAX</h2>
+          <button value="valuebtn" class="btn" id="btn"><b>clickeame</b></button>
+          <input id="input1" type="text" placeholder="write here">
+          <ul class="list">
+            <li class="item"><button class="item1">read</button></li>
+            <li class="item"><button class="item2">set as text</button></li>
+            <li class="item"><button class="item3">set as html</button></li>
+            <li class="item"><button class="item4">set as class</button></li>
+
+            <li class="item"><button class="item5">set prepend</button></li>
+            <li class="item"><button class="item6">set append</button></li>
+
+            <li class="item"><button class="item7">insert before</button></li>
+            <li class="item"><button class="item8">insert after</button></li>
+
+            <li class="item"><button class="item9">delete nodes p</button></li>
+
+            <li class="item"><button class="item10">animate to start</button></li>
+            <li class="item"><button class="item11">animation stop</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      /* jQuery estrructura basica
+      $(selector).action()
+      */
+
+      // espera a que el documento este listo para correr
+      $(document).ready(function () {
+        // console.log('El documento esta listo');
+
+        // simple accionador
+        $('p').click(function () {
+          $(this).hide();
+          console.log(this)
+        })
+
+        // los selectores se basan en los selectores de css
+        $('.subtitle').click(function () { $(this).hide(); })
+        $('#secundary').click(function () { $(this).hide(); })
+
+        // selectores compuestos de css
+        $('.selector .list .item').click(function () { $(this).toggleClass('red') })
+        $('.selector .list .item.item2').click(function () { console.log('encotraste un secreto') })
+        $('.selector .list:first-child').click(function () { console.log('first child') })
+
+        // callbacks
+        // muchas funciones tienen callbacks y pueden mandarse parametros
+        // $('a').hide(speed, callback)
+        $('.selector .item1').click(function () { $(this).hide(1000) })
+
+        /* eventos. clicks, mouseover, mouseout, scroll, hover, etc...
+        Eventos mouse
+        - click
+        - dobleclick
+        - mouseenter
+        - mouseleave
+        Eventos keyboard
+        - keypress
+        - keydown
+        - keyup
+        Eventos form
+        - submit
+        - change
+        - focus
+        Eventos docs
+        - ready
+        - resize
+        - scroll
+        - load
+        */
+        $('.events .item1').click(function () { console.log('evento click') })
+        $('.events .item2').click(function () { $('h1').hide(100) })
+        $('.events .item3').click(function () { $('h1').show(100) })
+        $('.events .item4').click(function () { console.log('evento click') })
+        $('.events .item4').dblclick(function () { console.log('evento doble click') })
+        $('.events .item5').mouseenter(function () { console.log('evento mouseenter') })
+        $('.events .item6').mouseleave(function () { console.log('evento mouseleave') })
+        $('.events .item7').hover(function () { $(this).toggleClass('red') })
+
+        // focus y blur son eventos opuestos. para ejecutarlos usa el tabulador
+        $('.events .item8').focus(function () { console.log('evento focus') })
+        $('.events .item9').blur(function () { console.log('evento blur') })
+
+        // evento on permite agregar varios eventos al mismo tiempo mediante un objeto
+        // tambien se puede usar esta sintax
+        // $('.events .item10').on('click', function () { console.log('evento click')})
+        $('.events .item10').on({
+          click: function () { console.log('evento click') },
+          mouseenter: function () { console.log('evento mouseenter') },
+          mouseleave: function () { console.log('evento mouseleave') },
+        })
+
+
+        // Animaciones
+        const cube = $('#cube')
+        $('.animations .item1').click(function () { cube.fadeIn(1000) })
+        $('.animations .item2').click(function () { cube.fadeOut(1000) })
+        $('.animations .item3').click(function () { cube.fadeToggle(1000) })
+        // $('selector').fadeTo(speed, opacity, callback)
+        // speed: slow, fast, miliseconds
+        $('.animations .item4').click(function () { cube.fadeTo(1000, 0.9, console.log('the end')) })
+
+        // animation slide
+        // up lo cierra, down lo abre
+        $('.animations .item5').click(function () { cube.slideUp(1000) })
+        $('.animations .item6').click(function () { cube.slideDown(1000) })
+        $('.animations .item7').click(function () { cube.slideToggle(1000) })
+
+        // up lo cierra, down lo abre
+        // $('selector').fadeTo({params}, speed, callback)
+        $('.animations .item8').click(function () {
+          cube.animate({
+            left: '250px',
+            opacity: '0.5',
+            height: '150px',
+            width: '150px'
+          }, 1000)
+        })
+        $('.animations .item9').click(function () {
+          cube.animate({
+            height: '+=50px',
+            width: '+=50px'
+          }, 1000)
+        })
+        $('.animations .item10').click(function () {
+          cube.animate({
+            height: '100px',
+            width: '100px',
+            opacity: '1',
+          }, 1000)
+        })
+        // $('selector').stop(stopAll: boolean, goToEnd: boolean);
+        // stopAll detiene todas las animaciones
+        // goToEnd detiene la animacion y la deja en el ultimo estado
+        $('.animations .item11').click(function () {
+          cube.stop()
+        })
+
+
+        // html
+        const btn = $('#btn')
+        const input1 = $('#input1')
+        // get
+        $('.html .item1').click(function () {
+          console.log({
+            text: btn.text(),
+            html: btn.html(),
+            attr: btn.attr('class'),
+          })
+        })
+        // set 
+        $('.html .item2').click(function () {
+          btn.text(input1.val())
+          input1.val('')
+        })
+        $('.html .item3').click(function () {
+          btn.html(input1.val())
+          input1.val('')
+        })
+        $('.html .item4').click(function () {
+          btn.attr('class', input1.val())
+          input1.val('')
+        })
+
+        // create nodes inside element
+        $('.html .item5').click(function () {
+          btn.prepend('<p class="test">insert prepend</p>')
+        })
+        $('.html .item6').click(function () {
+          btn.append('<p class="test">insert append</p>')
+        })
+        // create nodes outside element
+        $('.html .item7').click(function () {
+          btn.after('<p class="test">insert after</p>')
+        })
+        $('.html .item8').click(function () {
+          btn.before('<p class="test">insert before</p>')
+        })
+        // remove nodes
+        $('.html .item9').click(function () {
+          $('.html').remove("p, .test")
+        })
+
+
+        //ajax
+        $('.ajax .item1').click(function () {
+          $.get('./text.txt', function (data, status, jqxhr) {
+            console.log({data, status, jqxhr})
+          })
+        })
+
+        $('.ajax .item2').click(function () {
+          $.ajax({
+            url: 'https://jsonplaceholder.typicode.com/users',
+            contentType: 'application/json',
+            async: true,
+            type: 'GET',
+            success: function (data, status, jqxhr) {
+              console.log({data, status, jqxhr})
+            },
+            error: function (jqxhr, status, error) {
+              console.log({jqxhr, status, error})
+            }
+          })
+        })
+      })
+
+
+    </script>
+  </body>
+
+</html>
